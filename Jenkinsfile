@@ -14,8 +14,8 @@ pipeline{
                      withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pwd', usernameVariable: 'user')]) {
                     // sh "docker login -u ${user} -p ${pwd}"
                     //sh "docker push pgreeshma/welpython:v1"
-                    //sh “aws ecr get-login-password — region ${AWS_DEFAULT_REGION}  docker login — username ${user} — password ${pwd} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com”
-                     sh "aws ecr get-login-password — region ${AWS_DEFAULT_REGION} | docker login — username AWS — password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
+                     sh “aws ecr get-login-password — region ${AWS_DEFAULT_REGION}  docker login — username ${user} — password ${pwd} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com”
+                     //sh "aws ecr get-login-password — region ${AWS_DEFAULT_REGION} | docker login — username AWS — password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
                      }
                 }
             }
